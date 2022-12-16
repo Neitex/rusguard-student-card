@@ -37,7 +37,7 @@ data class Person(
 ) {
     val cardIDNumber: Long
         get() = cardID.toLong(radix = 16)
-    val fullName = "$lastName $firstName $middleName"
+    val fullName = "$lastName $firstName $middleName".replace("ё", "е")
     val toCSV = "$lastName,$firstName,$middleName,$parallel,$letter,$cardID"
 }
 
@@ -47,7 +47,7 @@ data class RusguardPerson(
     val firstName: String?,
     val middleName: String?,
 ) {
-    val fullName = "$lastName $firstName $middleName"
+    val fullName = "$lastName $firstName $middleName".replace("ё", "е")
 }
 
 class TrustAllX509TrustManager : X509TrustManager {
