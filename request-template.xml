@@ -1,0 +1,43 @@
+<s:Envelope
+        xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <s:Header>
+        <o:Security s:mustUnderstand="1"
+                    xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+            <u:Timestamp u:Id="_0">
+                <u:Created>{dateCreated}</u:Created>
+                <u:Expires>{dateExpires}</u:Expires>
+            </u:Timestamp>
+            <!--ВСТАВЬТЕ ДАННЫЕ ДЛЯ ВХОДА СЮДА-->
+        </o:Security>
+    </s:Header>
+    <s:Body>
+        <AssignAcsKeyForEmployee
+                xmlns="http://www.rusguardsecurity.ru">
+            <employeeId>{employeeID}</employeeId>
+            <indexNumber>3</indexNumber>
+            <keyData
+                    xmlns:a="http://schemas.datacontract.org/2004/07/VVIInvestment.RusGuard.DAL.Entities.Entity.ACS.AcsKeys"
+                    xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+                <a:CardTypeID i:nil="true"/>
+                <a:CardTypeName i:nil="true"/>
+                <a:Description i:nil="true"/>
+                <a:EndDate i:nil="true"/>
+                <a:Finger1_Image i:nil="true"/>
+                <a:Finger1_Template i:nil="true"/>
+                <a:Finger2_Image i:nil="true"/>
+                <a:Finger2_Template i:nil="true"/>
+                <a:Finger3_Image i:nil="true"/>
+                <a:Finger3_Template i:nil="true"/>
+                <a:Finger4_Image i:nil="true"/>
+                <a:Finger4_Template i:nil="true"/>
+                <a:Finger5_Image i:nil="true"/>
+                <a:Finger5_Template i:nil="true"/>
+                <a:KeyNumber>{keyNumber}</a:KeyNumber>
+                <a:Name/>
+                <a:StartDate i:nil="true"/>
+            </keyData>
+            <partOfCreateOperation>false</partOfCreateOperation>
+        </AssignAcsKeyForEmployee>
+    </s:Body>
+</s:Envelope>
